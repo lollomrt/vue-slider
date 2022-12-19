@@ -36,6 +36,10 @@ createApp({
         }
     },
 
+    // created() {
+    //     this.clickAvanti()
+    // },
+
     methods:{
         changeImages(index){
             this.activeSlide = index
@@ -51,6 +55,11 @@ createApp({
             if (this.activeSlide < 0){
                 this.activeSlide = this.slides.length - 1
             }
+        },
+        autoplay(){
+            setInterval(() => {
+                this.clickAvanti()
+            }, 3000);
         }
     }
 
