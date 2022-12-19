@@ -5,8 +5,8 @@ const {
 createApp({
     data(){
         return {
-            ActiveSlide = 0
-            slides = [
+            activeSlide: 0,
+            slides: [
                 {
                     image: 'img/01.webp',
                     title: 'Marvel\'s Spiderman Miles Morale',
@@ -37,7 +37,21 @@ createApp({
     },
 
     methods:{
-        
+        changeImages(index){
+            this.activeSlide = index
+        },
+        clickAvanti(){
+            this.activeSlide++
+            if (this.activeSlide > this.slides.length - 1){
+                this.activeSlide = 0
+            }
+        },
+        clickDietro(){
+            this.activeSlide--
+            if (this.activeSlide < 0){
+                this.activeSlide = this.slides.length - 1
+            }
+        }
     }
 
 }).mount("#app")
