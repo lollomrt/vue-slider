@@ -36,9 +36,9 @@ createApp({
         }
     },
 
-    // created() {
-    //     this.clickAvanti()
-    // },
+    created() {
+        this.autoplay()
+    },
 
     methods:{
         changeImages(index){
@@ -57,9 +57,13 @@ createApp({
             }
         },
         autoplay(){
-            setInterval(() => {
+            this.autoplay = setInterval(() => {
                 this.clickAvanti()
             }, 3000);
+        },
+        stopAutoplay(){
+            clearInterval(this.autoplay)
+            this.autoplay() = null
         }
     }
 
